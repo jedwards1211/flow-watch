@@ -1,0 +1,39 @@
+{
+  "name": "flow-watch",
+  "version": "1.0.0-beta.0",
+  "description": "clear the console and run flow on file changes",
+  "main": "src/flow-watch.js",
+  "bin": {
+    "flow-watch": "./src/flow-watch.js"
+  },
+  "scripts": {
+    "lint": "eslint src test",
+    "lint:fix": "eslint --fix src test",
+    "flow": "flow",
+    "flow:watch": "node src/flow-watch.js --watch .flowconfig",
+    "test": "mocha $npm_package_config_mocha",
+    "prepublish": "npm run lint && flow",
+    "postpublish": "git tag -a v$npm_package_version -m v$npm_package_version && git push origin v$npm_package_version"
+  },
+  "keywords": [
+    "flow",
+    "watch"
+  ],
+  "author": "Andy Edwards",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^3.7.0",
+    "flow-bin": "^0.33.0"
+  },
+  "dependencies": {
+    "nodemon": "^1.10.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jedwards1211/flow-watch.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jedwards1211/flow-watch/issues"
+  },
+  "homepage": "https://github.com/jedwards1211/flow-watch#readme"
+}
