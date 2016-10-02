@@ -1,12 +1,16 @@
 #! /usr/bin/env node
 // @flow
 
-var path = require('path')
 var spawn = require('child_process').spawn
 
-var root = path.resolve(__dirname, '..')
-var flow = path.join(root, 'node_modules', '.bin', 'flow')
-var opts = {stdio: 'inherit', cwd: root}
+var opts = {stdio: 'inherit'}
+
+var flow
+try {
+  flow = require('flow-bin')
+} catch (error) {
+  flow = 'flow'
+}
 
 function exec() {
   var child = require('child_process').exec.apply(undefined, arguments)

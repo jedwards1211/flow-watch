@@ -7,9 +7,16 @@ spawn(
   'node',
   [
     require.resolve('nodemon/bin/nodemon'),
-    '--ignore', 'node_modules/',
-    '--watch', '.flowconfig',
-  ].concat(process.argv.slice(2), require.resolve('./runFlow')),
+  ].concat(
+    process.argv.length > 2
+      ? process.argv.slice(2)
+      : [
+          '--ignore', 'node_modules/',
+          '--watch', '*.js',
+          '--watch', '.flowconfig',
+        ],
+    require.resolve('./runFlow')
+  ),
   {
     stdio: 'inherit'
   }

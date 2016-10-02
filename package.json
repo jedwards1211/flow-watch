@@ -10,7 +10,7 @@
     "lint": "eslint src test",
     "lint:fix": "eslint --fix src test",
     "flow": "flow",
-    "flow:watch": "node src/flow-watch.js --watch .flowconfig",
+    "flow:watch": "node src/flow-watch.js",
     "test": "mocha $npm_package_config_mocha",
     "prepublish": "npm run lint && flow",
     "postpublish": "git tag -a v$npm_package_version -m v$npm_package_version && git push origin v$npm_package_version"
