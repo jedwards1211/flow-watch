@@ -9,10 +9,11 @@ Add a script to your `package.json`:
 
 ```json
 {
-  scripts: {
+  "scripts": {
     "flow:watch": "flow-watch"
   }
 }
+```
 
 ## Configuration
 
