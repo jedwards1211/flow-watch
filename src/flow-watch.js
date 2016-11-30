@@ -13,6 +13,7 @@ spawn(
       : [
           '--ignore', 'node_modules/',
           '--watch', '*.js',
+          '--watch', '*.js.flow',
           '--watch', '.flowconfig',
         ],
     require.resolve('./runFlow')
