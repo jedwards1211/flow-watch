@@ -1,10 +1,6 @@
 #! /usr/bin/env node
 // @flow
 
-var spawn = require('child_process').spawn
-
-var opts = {stdio: 'inherit'}
-
 var flow
 try {
   flow = require('flow-bin')
@@ -12,14 +8,8 @@ try {
   flow = 'flow'
 }
 
-function exec() {
-  var child = require('child_process').exec.apply(undefined, arguments)
-  child.stdout.pipe(process.stdout)
-  child.stderr.pipe(process.stderr)
-}
+process.stdout.write('\u001b[2J')
+process.stdout.write('\u001b[1;1H')
+process.stdout.write('\u001b[3J')
+require('child_process').spawn(flow, {stdio: 'inherit'})
 
-exec('clear', opts, function () {
-  exec("printf '\\e[3J'", opts, function () {
-    spawn(flow, opts)
-  })
-})
