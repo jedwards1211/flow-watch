@@ -22,7 +22,7 @@
   "author": "Andy Edwards",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^3.7.0",
+    "eslint": "^3.17.0",
     "flow-bin": "^0.36.0"
   },
   "dependencies": {
