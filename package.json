@@ -26,7 +26,7 @@
     "flow-bin": "^0.41.0"
   },
   "dependencies": {
-    "nodemon": "^1.10.2"
+    "nodemon": "^1.14.0"
   },
   "repository": {
     "type": "git",
