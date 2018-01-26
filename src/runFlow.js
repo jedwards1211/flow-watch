@@ -15,5 +15,5 @@ if (process.stdout.isTTY) {
   process.stdout.write('\u001b[3J')
 }
 
-require('child_process').spawn(flow, {stdio: 'inherit'})
+require('cross-spawn')(flow, {stdio: 'inherit'})
 

@@ -26,6 +26,7 @@
     "flow-bin": "^0.41.0"
   },
   "dependencies": {
+    "cross-spawn": "^6.0.3",
     "nodemon": "^1.10.2"
   },
   "repository": {

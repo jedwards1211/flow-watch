@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // @flow
 
-var spawn = require('child_process').spawn
+var spawn = require('cross-spawn')
 
 spawn(
   'node',
