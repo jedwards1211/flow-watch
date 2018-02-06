@@ -13,6 +13,7 @@ spawn(
       : [
           '--ignore', 'node_modules/',
           '--watch', '*.js',
+          '--watch', '*.jsx',
           '--watch', '*.js.flow',
           '--watch', '.flowconfig',
         ],
