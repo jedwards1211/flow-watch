@@ -24,5 +24,5 @@ Add a script to your `package.json`:
 `flow-watch` uses [`nodemon`](https://github.com/remy/nodemon) and accepts any command-line options that `nodemon` does.
 If you provide no arguments, it uses the following defaults:
 ```
---ignore node_modules/ --watch *.js --watch .flowconfig
+--ignore node_modules/ --watch *.js --watch *.jsx --watch *.js.flow --watch .flowconfig
 ```
