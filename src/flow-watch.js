@@ -16,6 +16,7 @@ spawn(
           '--watch', '*.jsx',
           '--watch', '*.js.flow',
           '--watch', '.flowconfig',
+	  '--ext', 'js,mjs,jsx,json',
         ],
     require.resolve('./runFlow')
   ),
