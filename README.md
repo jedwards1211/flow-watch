@@ -9,15 +9,15 @@ if it works on Linux or Windows.  Works with `flow` on your path or `flow-bin` i
 npm install --save-dev flow-watch
 ```
 
-Add a script to your `package.json`:
+Then run the `flow-watch` command.
 
-```json
-{
-  "scripts": {
-    "flow:watch": "flow-watch"
-  }
-}
-```
+`flow-watch` passes known `nodemon` options to `nodemon`, and all other options
+to `flow`.
+
+## You may not need this?
+
+`nodemon` [has a documented way to clear the console on restart](https://github.com/remy/nodemon/blob/master/faq.md#how-to-clear-the-console-on-restart), so you may want to use `nodemon`/`flow` directly
+in a package script instead of using `flow-watch`.
 
 ## Configuration
 
