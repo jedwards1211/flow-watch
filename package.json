@@ -2,17 +2,17 @@
   "name": "flow-watch",
   "version": "1.1.4",
   "description": "clear the console and run flow on file changes",
-  "main": "src/flow-watch.js",
+  "main": "./index.js",
   "bin": {
-    "flow-watch": "./src/flow-watch.js"
+    "flow-watch": "./index.js"
   },
   "scripts": {
-    "lint": "eslint src test",
-    "lint:fix": "eslint --fix src test",
-    "flow": "flow",
-    "flow:watch": "node src/flow-watch.js",
-    "test": "mocha $npm_package_config_mocha",
-    "prepublish": "npm run lint && flow",
+    "lint": "eslint *.js test",
+    "lint:fix": "eslint --fix *.js test",
+    "flow:watch": "node ./index.js",
+    "test": "mocha",
+    "test:watch": "mocha --watch",
+    "prepublishOnly": "npm run lint && npm test",
     "postpublish": "git tag -a v$npm_package_version -m v$npm_package_version && git push origin v$npm_package_version"
   },
   "keywords": [
@@ -22,12 +22,14 @@
   "author": "Andy Edwards",
   "license": "MIT",
   "devDependencies": {
+    "chai": "^4.2.0",
     "eslint": "^3.7.0",
-    "flow-bin": "^0.41.0"
+    "flow-bin": "^0.41.0",
+    "mocha": "^6.2.2"
   },
   "dependencies": {
     "cross-spawn": "^6.0.3",
-    "nodemon": "^1.18.6"
+    "nodemon": "^1.19.4"
   },
   "repository": {
     "type": "git",

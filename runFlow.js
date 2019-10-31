@@ -1,5 +1,5 @@
 #! /usr/bin/env node
-// @flow
+'use strict'
 
 var flow
 try {
@@ -15,4 +15,4 @@ if (process.stdout.isTTY && !process.env.FLOW_WATCH_NO_CLEAR_CONSOLE) {
   process.stdout.write('\u001b[3J')
 }
 
-require('cross-spawn')(flow, {stdio: 'inherit'})
+require('cross-spawn')(flow, process.argv.slice(2), {stdio: 'inherit'})

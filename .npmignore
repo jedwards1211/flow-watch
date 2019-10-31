@@ -1,4 +1,4 @@
 node_modules
 .eslintrc
 .flowconfig
-.travis.yml
+test
