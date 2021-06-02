@@ -19,6 +19,21 @@ to `flow`.
 `nodemon` [has a documented way to clear the console on restart](https://github.com/remy/nodemon/blob/master/faq.md#how-to-clear-the-console-on-restart), so you may want to use `nodemon`/`flow` directly
 in a package script instead of using `flow-watch`.
 
+To use `nodemon` and `flow`, you can add this to your `package.json` (tested with `nodemon@2.0.7`):
+
+```json
+{
+  "scripts": {
+    "flow:watch": "nodemon -x 'flow || exit 1'"
+  },
+  "nodemonConfig": {
+    "events": {
+      "start": "cls || clear"
+    }
+  }
+}
+```
+
 ## Configuration
 
 `flow-watch` uses [`nodemon`](https://github.com/remy/nodemon) and accepts any command-line options that `nodemon` does.
